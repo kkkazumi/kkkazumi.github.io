@@ -17,7 +17,9 @@ Asset.assets = [
 // 読み込んだ画像
 Asset.images = {};
 
+var mikanX = 0;
 
+var lastTimestamp = null;
 
 function init() {
   canvas = document.getElementById('maincanvas');
@@ -34,8 +36,17 @@ function init() {
   requestAnimationFrame(update);
 }
 
-function update() {
+function update(timestamp) {
   requestAnimationFrame(update);
+
+var delta = 0; // 前回フレーム時間からの経過時間(単位:秒)
+  if (lastTimestamp != null) {
+    delta = (timestamp - lastTimestamp) / 1000;  // ミリ秒を1000で割ると秒になる(1000ミリ秒÷1000は1秒)
+  }
+  lastTimestamp = timestamp;
+
+  mikanX += 100 * delta;
+
   render();
 }
 
@@ -45,7 +56,7 @@ function render() {
   // 背景を表示
   ctx.drawImage(Asset.images['back'], 0, 0);
   // みかん箱を表示
-  ctx.drawImage(Asset.images['box'], 0, 0);
+  ctx.drawImage(Asset.images['box'], mikanX, 0);
 }
 
 // アセットの読み込み
