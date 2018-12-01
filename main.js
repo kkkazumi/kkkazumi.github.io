@@ -1,3 +1,4 @@
+//https://qiita.com/mozukichi/items/4ea9542a6dde45c6a9fd
 var SCREEN_WIDTH = 800;
 var SCREEN_HEIGHT = 600;
 
@@ -16,7 +17,6 @@ Asset.assets = [
 
 // 読み込んだ画像
 Asset.images = {};
-
 var mikanX = 0;
 
 var lastTimestamp = null;
@@ -46,6 +46,9 @@ var delta = 0; // 前回フレーム時間からの経過時間(単位:秒)
   lastTimestamp = timestamp;
 
   mikanX += 100 * delta;
+  if(mikanX > SCREEN_WIDTH){
+  	mikanX = 0;
+  }
 
   render();
 }
@@ -90,5 +93,3 @@ Asset._loadImage = function(asset, onLoad) {
   image.onload = onLoad;
   Asset.images[asset.name] = image;
 };
-
-
