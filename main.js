@@ -6,26 +6,6 @@ window.addEventListener('load', init);
 var canvas;
 var ctx;
 
-function init() {
-  canvas = document.getElementById('maincanvas');
-  ctx = canvas.getContext('2d');
-
-  canvas.width = SCREEN_WIDTH;
-  canvas.height = SCREEN_HEIGHT;
-
-  requestAnimationFrame(update);
-}
-
-function update() {
-  requestAnimationFrame(update);
-
-  render();
-}
-
-function render() {
-  // 全体をクリア
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
 var Asset = {}
 
 // アセットの定義
@@ -36,6 +16,37 @@ Asset.assets = [
 
 // 読み込んだ画像
 Asset.images = {};
+
+
+
+function init() {
+  canvas = document.getElementById('maincanvas');
+  ctx = canvas.getContext('2d');
+
+  canvas.width = SCREEN_WIDTH;
+  canvas.height = SCREEN_HEIGHT;
+
+  Asset.loadAssets(function(){
+
+  requestAnimationFrame(update);
+  });
+
+  requestAnimationFrame(update);
+}
+
+function update() {
+  requestAnimationFrame(update);
+  render();
+}
+
+function render() {
+  // 全体をクリア
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // 背景を表示
+  ctx.drawImage(Asset.images['back'], 0, 0);
+  // みかん箱を表示
+  ctx.drawImage(Asset.images['box'], 0, 0);
+}
 
 // アセットの読み込み
 Asset.loadAssets = function(onComplete) {
@@ -70,11 +81,3 @@ Asset._loadImage = function(asset, onLoad) {
 };
 
 
-function render() {
-  // 画面全体をクリア
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // 背景を表示
-  ctx.drawImage(Asset.images['back'], 0, 0);
-  // みかん箱を表示
-  ctx.drawImage(Asset.images['box'], 0, 0);
-}
