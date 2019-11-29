@@ -1,162 +1,184 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>フリーHTML5/CSS3ホームページテンプレート NO.002</title>
-<meta name="viewport" content="width=device-width">
-<meta name="keywords" content="">
-<meta name="description" content="">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="js/jquery.smoothscroll.js"></script>
-<script type="text/javascript" src="js/jquery.scrollshow.js"></script>
-<script type="text/javascript" src="js/jquery.rollover.js"></script>
-<script>
-$(function($){
-	$('html').smoothscroll({easing : 'swing', speed : 1000, margintop : 10});
-	$('.totop').scrollshow({position : 500});
-});
-</script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>ビジネスホテル向け 無料ホームページテンプレート tp_hotel5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/openclose.js"></script>
+<script src="js/fixmenu_pagetop.js"></script>
 <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/css3-mediaqueries.js"></script>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
+
 <body>
+
+<div id="container">
+
 <header>
-	<h1><a href="index.html">HTML5/CSS3デザインテンプレート</a></h1>
-	<div class="tel"><span>&#9742;012-345-678</span></div>
-	<p>
-	この箇所はホームページの説明文など記載するのに最適です。だいたい1行程度で収めるのがよいかと思います。
-	</p>
+<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="Sample Business Hotel"></a></h1>
+<p id="tel">ご予約・お問い合わせ<br>
+<span class="big1">03-0000-0000</span><br>
+<span class="mini1">AM8:00〜PM9:00 年中無休</span></p>
 </header>
 
-<nav>
-	<ul>
-		<li><a href="index.html">HOME</a></li>
-		<li><a href="index.html">メニュー・料金</a></li>
-		<li><a href="index.html">ご予約</a></li>
-		<li><a href="index.html">ブログ</a></li>
-		<li><a href="index.html">お問い合わせ</a></li>
-		<li><a href="sample.html">SAMPLE</a></li>
-	</ul>
+<!--スライドショー-->
+<aside id="mainimg">
+<img src="images/1.jpg" alt="" class="slide0">
+<img src="images/1.jpg" alt="" class="slide1">
+<img src="images/2.jpg" alt="" class="slide2">
+<img src="images/3.jpg" alt="" class="slide3">
+</aside>
+
+<!--PC用（801px以上端末）メニュー-->
+<nav id="menubar">
+<ul>
+<li class="current"><a href="index.html">Home<span>ホーム</span></a></li>
+<li><a href="info.html">Information<span>ホテルのご案内</span></a></li>
+<li><a href="service.html">Service<span>サービスのご案内</span></a></li>
+<li><a href="plan.html">Plan<span>ご宿泊プラン</span></a></li>
+<li><a href="access.html">Access<span>アクセス・周辺環境</span></a></li>
+<li><a href="contact.html">Contact<span>お問合せ・ご予約</span></a></li>
+</ul>
+</nav>
+
+<!--小さな端末用（800px以下端末）メニュー-->
+<nav id="menubar-s">
+<ul>
+<li class="current"><a href="index.html">Home<span>ホーム</span></a></li>
+<li><a href="info.html">Information<span>ホテルのご案内</span></a></li>
+<li><a href="service.html">Service<span>サービスのご案内</span></a></li>
+<li><a href="plan.html">Plan<span>ご宿泊プラン</span></a></li>
+<li><a href="access.html">Access<span>アクセス・周辺環境</span></a></li>
+<li><a href="contact.html">Contact<span>お問合せ・ご予約</span></a></li>
+</ul>
 </nav>
 
 <div id="contents">
-	<div id="subnav">
-		<h3>下層サブメニュー</h3>
-		<ul>
-			<li><a href="index.html">リスト１</a></li>
-			<li><a href="index.html">リスト２</a></li>
-			<li><a href="index.html">リスト３</a></li>
-			<li><a href="index.html">リスト４</a></li>
-			<li><a href="index.html">リスト５</a></li>
-		</ul>
-	</div><!-- /#subnav -->
 
-	<div id="main">
-		<h2 id="sample">サンプルタグについて</h2>
-		<p>
-		以下、サンプルタグになります。ご利用の際は参考にしてみてください。
-		</p>
-		<h2>h2タグ</h2>
-		<h3>h3タグ</h3>
-		<h4>h4タグ</h4>
-		<h5>h5タグ</h5>
-		<h6>h6タグ</h6>
-		<p>
-		<em>強調（em）</em>
-		<strong>より強い強調（strong）</strong>
-		<ins>追加（ins）</ins>
-		<del>削除（del）</del>
-		<a href="#">テキストアンカー</a>
-		</p>
-		<blockquote>
-		引用部分です。引用部分です。引用部分です。引用部分です。引用部分です。引用部分です。引用部分です。引用部分です。引用部分です。引用部分です。引用部分です。引用部分です。
-		</blockquote>
-		<h3>リスト</h3>
-		<h4>普通のリスト</h4>
-		<ul>
-			<li>普通のリスト1</li>
-			<li>普通のリスト2</li>
-			<li>普通のリスト3</li>
-		</ul>
-		<h4>番号付きリスト</h4>
-		<ol>
-			<li>番号付きリスト1</li>
-			<li>番号付きリスト2</li>
-			<li>番号付きリスト3<br>li要素の中はブロックレベルのタグを使用することが出来ます。例えば、&lt;p&gt;タグも記述することが出来ます。<br></li>
-		</ol>
-		<h4>デザインリスト</h4>
-		<p>
-		このようにリストマークを星形にしたい場合は、ulタグに『class="list"』を追記してください。
-		</p>
-		<ul class="list">
-			<li>デザインリスト1</li>
-			<li>デザインリスト2</li>
-			<li>デザインリスト3<br>li要素の中はブロックレベルのタグを使用することが出来ます。例えば、&lt;p&gt;タグも記述することが出来ます。<br></li>
-		</ul>
-		<h4>定義リスト</h4>
-		<dl>
-			<dt>定義リスト1</dt>
-			<dd>定義した用語の説明</dd>
-			<dt>定義リスト2</dt>
-			<dd>定義した用語の説明</dd>
-			<dt>定義リスト3</dt>
-			<dd>定義した用語の説明<br>dd要素の中はブロックレベルのタグを使用することが出来ます。例えば、&lt;p&gt;タグも記述することが出来ます。しかし、dt要素にはインライン要素しか記述することができません。</dd>
-		</dl>
-		<h3>テーブル</h3>
-		<table>
-			<tbody>
-			<tr><th>見出し1</th><th>見出し2</th><th>見出し3</th><th>見出し4</th><th>見出し5</th></tr>
-			<tr><td>セル1</td><td>セル2</td><td>セル3</td><td>セル4</td><td>セル5</td></tr>
-			<tr><td>セル1</td><td>セル2</td><td>セル3</td><td>セル4</td><td>セル5</td></tr>
-			<tr><td>セル1</td><td>セル2</td><td>セル3</td><td>セル4</td><td>セル5</td></tr>
-			</tbody>
-		</table>
-		<table>
-			<tbody>
-			<tr><th>見出し1</th><td>セル1</td><td>セル2</td><td>セル3</td><td>セル4</td><td>セル5</td></tr>
-			<tr><th>見出し2</th><td>セル1</td><td>セル2</td><td>セル3</td><td>セル4</td><td>セル5</td></tr>
-			<tr><th>見出し3</th><td>セル1</td><td>セル2</td><td>セル3</td><td>セル4</td><td>セル5</td></tr>
-			<tr><th>見出し4</th><td>セル1</td><td>セル2</td><td>セル3</td><td>セル4</td><td>セル5</td></tr>
-			<tr><th>見出し5</th><td>セル1</td><td>セル2</td><td>セル3</td><td>セル4</td><td>セル5</td></tr>
-			</tbody>
-		</table>
-	</div><!-- /#main -->
-	<div id="sub">
-		<h3>見出しh3タグ</h3>
-		<ul class="submenu">
-			<li><a href="index.html">リスト１</a></li>
-			<li><a href="index.html">リスト２</a></li>
-			<li><a href="index.html">リスト３</a></li>
-			<li><a href="index.html">リスト４</a></li>
-			<li><a href="index.html">リスト５</a></li>
-		</ul>
-		<ul class="bnr">
-			<li><a href="index.html"><img src="images/banner.png" alt=""></a></li>
-			<li><a href="index.html"><img src="images/banner.png" alt=""></a></li>
-			<li><a href="index.html"><img src="images/banner.png" alt=""></a></li>
-			<li><a href="index.html"><img src="images/banner.png" alt=""></a></li>
-		</ul>
-	</div><!-- /#sub -->
-</div><!-- /#contents -->
+<div id="main">
+
+<section>
+
+<h2>テンプレートのご利用前に必ずお読み下さい</h2>
+
+<h3>利用規約のご案内</h3>
+<p>このテンプレートは、<a href="https://template-party.com/">Template Party</a>にて無料配布している『ビジネスホテル向け 無料ホームページテンプレート tp_hotel5』です。必ずダウンロード先のサイトの<a href="https://template-party.com/read.html">利用規約</a>をご一読の上でご利用下さい。</p>
+<p><strong class="color1">■HP最下部の著作表示『Web Design:Template-Party』は無断で削除しないで下さい。</strong><br>
+わざと見えなく加工する事も禁止です。</p>
+<p><strong class="color1">■下部の著作を外したい場合は</strong><br>
+<a href="https://template-party.com/">Template-Party</a>の<a href="https://template-party.com/member.html">ライセンス契約</a>を行う事でHP下部の著作を外す事ができます。</p>
+
+<h3>当テンプレートにはお問い合わせフォーム（自動フォーム：試用版）がセットされています</h3>
+<p><a href="contact.html">contact.html</a>と同じ３項目のお問い合わせフォームを簡単に使えるようにセットしています。</p>
+<p><strong class="color1">■自動フォームを使う場合（※編集に入る前にご確認下さい）</strong><br>
+あなたのメールアドレス設定と、簡単な編集だけで使えます。<a href="https://template-party.com/file/formgen_manual_set2.html">詳しくはこちらのマニュアルをご覧下さい。</a></p>
+<p><strong class="color1">■自動フォームを使わない場合</strong><br>
+テンプレートに梱包されている「form.html」「confirm.html」「finish.html」の3枚のファイルを削除して下さい。</p>
+
+<h3>テンプレートに梱包されているjavascriptファイル（jsファイル）について</h3>
+<p>当テンプレートに梱包されているjavascriptファイルは全て<a href="http://www.crytus.co.jp/">有限会社クリタス様</a>提供のものです。jsファイルは改変せずにご利用下さい。<br>
+また、当サイトのテンプレート「以外」に使いたいなど、「プログラムのみ」を使う場合は<a href="https://template-party.com/free_program/openclose_license.html">こちらの規約</a>をお守り下さい。</p>
+
+<h3>当テンプレートの詳しい使い方は</h3>
+<p><a href="info.html#about">こちらをご覧下さい。</a></p>
+
+</section>
+
+<section id="new">
+<h2>更新情報・お知らせ</h2>
+<dl>
+<dt>2019/02/04</dt>
+<dd>html,cssなど全面リニューアル。旧ファイルが必要な場合はお問い合わせ下さい。<span class="newicon">NEW</span></dd>
+<dt>2015/07/29</dt>
+<dd>tp_hotel5公開。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>20XX/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+</dl>
+<p class="r">&raquo;&nbsp;<a href="#">過去ログ</a></p>
+</section>
+
+</div>
+<!--/main-->
+
+<div id="sub">
+
+<nav class="box">
+<h2>SUB MENU</h2>
+<ul class="submenu">
+<li><a href="#">主要リンクサンプル</a></li>
+<li><a href="#">主要リンクサンプル</a></li>
+<li><a href="#">主要リンクサンプル</a></li>
+<li><a href="#">主要リンクサンプル</a></li>
+<li><a href="#">主要リンクサンプル</a></li>
+</ul>
+</nav>
+
+<section class="box">
+<h2>ご予約状況</h2>
+<p class="c"><span class="man"><span>■</span>満室</span><br>
+<img src="images/sample_cal.gif" alt=""><br>
+<a href="https://template-party.com/free_program/program1.html" target="_blank">カレンダープログラム無料配布中</a></p>
+</section>
+
+<h2>boxなしだと</h2>
+<p>こんな感じです。サンプルテキスト。サンプルテキスト。サンプルテキスト。</p>
+
+<nav>
+<h2>SUB MENU</h2>
+<ul class="submenu">
+<li><a href="#">主要リンクサンプル</a></li>
+<li><a href="#">主要リンクサンプル</a></li>
+<li><a href="#">主要リンクサンプル</a></li>
+<li><a href="#">主要リンクサンプル</a></li>
+<li><a href="#">主要リンクサンプル</a></li>
+</ul>
+</nav>
+
+<section>
+<h2>ご予約状況</h2>
+<p class="c"><span class="man"><span>■</span>満室</span><br>
+<img src="images/sample_cal.gif" alt=""></p>
+</section>
+
+</div>
+<!--/sub-->
+
+</div>
+<!--/contents-->
+
+</div>
+<!--/container-->
 
 <footer>
-	<div class="footmenu">
-		<ul>
-			<li><a href="index.html">HOME</a></li>
-			<li><a href="index.html">メニュー・料金</a></li>
-			<li><a href="index.html">ご予約</a></li>
-			<li><a href="index.html">ブログ</a></li>
-			<li><a href="index.html">お問い合わせ</a></li>
-			<li><a href="sample.html">SAMPLE</a></li>
-		</ul>
-	</div>
-	<div class="copyright">Copyright &#169; 20XX - 20XX SITENAME All Rights Reserved.</div>
+<small>Copyright&copy; <a href="index.html">Sample Business Hotel</a> All Rights Reserved.</small>
+<span class="pr"><a href="http://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
 </footer>
 
-<div class="totop"><a href="#"><img src="images/totop.png" alt="ページのトップへ戻る"></a></div><!-- /.totop -->
+<p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
+
+<!--メニュー開閉ボタン-->
+<div id="menubar_hdr" class="close"></div>
+
+<!--メニューの開閉処理条件設定　800px以下-->
+<script>
+if (OCwindowWidth() <= 800) {
+	open_close("menubar_hdr", "menubar-s");
+}
+</script>
+
 </body>
 </html>
