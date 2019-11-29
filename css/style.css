@@ -1,574 +1,753 @@
-@charset "UTF-8";
+@charset "utf-8";
 
-/*================================================
- *  CSSリセット
- ================================================*/
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;font-weight:normal;}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
 
-/*================================================
- *  一般・共通設定
- ================================================*/
+
+/*slide.cssの読み込み
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@import url(slide.css);
+
+
+
+/*全端末（PC・タブレット・スマホ）共通設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*全体の設定
+---------------------------------------------------------------------------*/
 body {
-	width:960px;
-	margin:0 auto;
-	font-size:14px;
-	color:#382400;
-	font-family:"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
-	line-height:1.6;
+	margin: 0px;
+	padding: 0px;
+	color: #666;	/*全体の文字色*/
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-size: 16px;	/*文字サイズ*/
+	line-height: 2;		/*行間*/
+	background: #fff;	/*全体の背景色*/
+	-webkit-text-size-adjust: none;
 }
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form,input,select,textarea {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
+ul {list-style-type: none;}
+ol {padding-left: 40px;padding-bottom: 15px;}
+img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
+video {max-width: 100%;}
+iframe {width: 100%;}
 
-#main {
-	float:left;
-	width:65.625%;
-}
-
-#sub {
-	float:right;
-	width:31.25%;
-}
-
-#subnav {
-	display:none;
-}
-
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
 a {
-	color:#9b2f3d;
+	color: #666;	/*リンクテキストの色*/
+	transition: 0.4s;	/*マウスオン時の移り変わるまでの時間設定。0.4秒。*/
 }
 a:hover {
-	color:#c04d5c;
+	color: #c50000;			/*マウスオン時の文字色*/
+	text-decoration: none;	/*マウスオン時に下線を消す設定。残したいならこの１行削除。*/
 }
 
-h1 {
-	color:#85d1c6;
-	font-size:28px;
-	line-height:1.2;
-}
-h1 a {
-	color:#85d1c6;
-	text-decoration:none;
-}
-h1 a:hover {
-	color:#85d1c6;
-	text-decoration:underline;
+/*containerブロック
+---------------------------------------------------------------------------*/
+#container {
+	max-width: 1300px;	/*サイトの最大幅*/
+	margin: 0 auto;
+	padding: 0 3%;
 }
 
-h2 {
-	margin-bottom:0.5em;
-	font-size:18px;
-	color:#9b2f3d;
-	border-bottom:3px solid #c4877f;
-}
-
-h3 {
-	margin-bottom:0.25em;
-	padding:2px 5px;
-	color:#fff;
-	font-size:16px;
-	background:#c88d8b;
-}
-
-h4 {
-	margin-bottom:0.25em;
-	font-size:16px;
-	color:#382400;
-}
-h4:before {
-	content:"\002665";
-	color:#9b2f3d;
-}
-
-h5 {
-	margin-bottom:0.25em;
-	padding:2px;
-	color:#382400;
-	font-size:16px;
-	border-top:1px dotted #382400;
-	border-bottom:1px dotted #382400;
-	background:#b7af9c;
-}
-
-h6 {
-	margin-bottom:0.25em;
-	color:#382400;
-	font-size:14px;
-	font-weight:bold;
-}
-
-p {
-	margin:0 0 1em 0;
-}
-
-img {
-	vertical-align:bottom;
-}
-
-em {
-	font-weight:bold;
-}
-
-strong {
-	font-weight:bold;
-	color:#7fb6ae;
-}
-
-pre {
-	margin:1em 0;
-	padding:1em;
-}
-
-blockquote {
-	margin-bottom:1em;
-	padding:1em;
-	border:1px dotted #ddd;
-	border-left:5px solid #ddd;
-}
-
-ul,ol,dl {
-	margin:0 0 1em 0;
-}
-ul li {
-	list-style:disc;
-}
-ol li {
-	list-style:decimal;
-}
-li {
-	margin-left:2em;
-}
-
-dt {
-	margin-bottom:0.5em;
-	border-bottom:1px dotted #ddd;
-}
-dt:before {
-	content:"\0025a0";
-}
-dd {
-	margin-bottom:1em;
-}
-
-table {
-	width:100%;
-	margin-bottom:1em;
-	border-collapse:collapse;
-	border:1px solid #ddd;
-}
-th {
-	padding:10px;
-	text-align:center;
-	vertical-align:middle;
-	border:1px solid #ddd;
-	background:#eebfb9;
-}
-td {
-	padding:10px;
-	text-align:left;
-	border:1px solid #ddd;
-}
-
-img {
-	vertical-align:bottom;
-}
-
-/*================================================
- *  ヘッダー
- ================================================*/
+/*ヘッダー（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+/*ヘッダーブロック*/
 header {
-	position:relative;
-	margin:10px 0;
+	height: 140px;	/*ヘッダーの高さ*/
 }
-header h1 {
-	margin-bottom:20px;
+/*ロゴ画像*/
+header #logo img {
+	width: 400px;		/*画像の幅*/
+	float: left;		/*左に回り込み*/
+	margin-top: 40px;	/*上に空けるスペース。上下間のバランスをここでとって下さい。*/
 }
-
-.tel {
-	position:absolute;
-	top:0;
-	right:0;
-	vertical-align:top;
-}
-.tel span {
-	color:#705c0b;
-	font-family:Century, "MS 明朝","Hiragino Mincho Pro W3","ヒラギノ明朝 Pro W3",serif;
-	font-size:28px;
-	font-weight:bold;
-	vertical-align:middle;
-}
-
-
-/*================================================
- *  グローバルナビゲーション
- ================================================*/
-nav {
-	margin-bottom:20px;
-	padding:5px 0;
-	background:#be993e;
-	overflow:hidden;
-}
-nav ul {
-	margin-left:10px;
-	padding:0;
-}
-nav li {
-	float:left;
-	list-style:none;
-	margin:0;
-	padding-right:20px;
-}
-nav li a {
-	color:#fff;
-	text-decoration:none;
-}
-nav li a:hover {
-	color:#fff;
-	text-decoration:underline;;
+/*電話番号ボックス*/
+header #tel {
+	text-align: center;	/*中身をセンタリング*/
+	line-height: 1.2;	/*行間をデフォルトより少し狭くする。デフォルトは上のbodyにあります。*/
+	float: right;		/*右に回り込み*/
+	margin-top: 30px;	/*上に空けるスペース。上下間のバランスをここでとって下さい。*/
+	border: 1px solid #c50000;
+	background: #FFF;	/*背景色（古いブラウザ用*/
+	background: linear-gradient(#FFF, #f7f7f7);		/*グラデーション*/
+	padding: 10px 40px;		/*上下、左右へのボックス内の余白*/
+	letter-spacing: 0.2em;	/*文字間隔を少し広くとる*/
+	color: #c50000;	/*文字色*/
 }
 
-/*================================================
- *  サブコンテンツ
- ================================================*/
-.submenu li {
-	margin:0;
-	padding:0;
-	list-style:none;
-}
-.submenu li a:before {
-	content:"\0025a0";
-	color:#5b4111;
+/*コンテンツ（メインメニューとmainとsubを囲むブロック）
+---------------------------------------------------------------------------*/
+#contents {
+	clear: both;overflow: hidden;padding-bottom: 40px;
 }
 
-.submenu li a {
-	display:block;
-	padding:5px 2px;
-	border-bottom:1px dotted #ddd;
-	text-decoration:none;
+/*メインメニュー
+---------------------------------------------------------------------------*/
+/*メニューブロック*/
+#menubar {
+	overflow: hidden;
+	background: #a00101;	/*背景色（古いブラウザ用）*/
+	background: linear-gradient(#fa4e4e, #a00101 49%, #6d0000 50%, #bc0101);	/*背景グラデーション*/
+	box-shadow: 1px 1px 8px #ebc4c4;	/*ボックスの影。0,0,0は黒の事で0.3は30%色が出た状態。*/
+	border: 1px solid #8e0000;	/*枠線の幅・線種・色*/
+	border-radius: 8px;	/*角丸のサイズ*/
+	text-align: center;	/*テキストをセンタリング*/
+	margin-bottom: 40px;	/*下のコンテンツとの間に空けるスペース*/
+	padding: 0 3%;		/*上下、左右へのブロック内の余白*/
 }
-.submenu li a:hover {
-	background:#f7d0cb;
+/*メニュー１個あたりの設定*/
+#menubar li {
+	overflow: hidden;
+	float: left;		/*左に回り込み*/
+	width: 16.6%;		/*メニュー幅。6個なので100÷6=16.6。5個にしたいなら20%にする。*/
+	line-height: 1.6;	/*行間*/
+}
+#menubar li a {
+	display:  block;text-decoration: none;
+	font-size: 18px;	/*文字サイズ*/
+	border-right: 1px solid #8e0000;	/*右側の線の幅・線種・色*/
+	padding: 10px 0;	/*上下、左右へのメニュー内の余白*/
+	text-shadow: 0px -1px 1px rgba(0,0,0,0.5);	/*テキストの影。右へ、下へ(マイナスがついているので上に向かう)、広げる幅、0,0,0は黒の事で0.5は50%色が出た状態の事。*/
+	color: #fff;
+}
+/*１つ目のメニューへの追加設定*/
+#menubar li:first-child a {
+	border-left: 1px solid #8e0000;	/*左側の線の幅・線種・色*/
+}
+/*英語表記（飾り文字）*/
+#menubar li a span {
+	display: block;
+	font-weight: normal;	/*太字を標準にする*/
+	font-size: 10px;		/*文字サイズ*/
+	padding-bottom: 8px;	/*下に余白を作る*/
+}
+/*マウスオン時と、現在表示中メニューの設定*/
+#menubar li a:hover, #menubar li.current a {
+	background: #ff0e0e;	/*背景色（古いブラウザ用）*/
+	background: linear-gradient(#e7a5a5, #ce0000 49%, #a20000 50%, #ff0e0e);	/*背景グラデーション*/
+}
+/*スマホ用メニューを表示させない*/
+#menubar-s {display: none;}
+/*３本バーアイコンを表示させない*/
+#menubar_hdr {display: none;}
+
+/*mainコンテンツ
+---------------------------------------------------------------------------*/
+#main {
+	float: right;	/*右に回り込み*/
+	width: 72%;		/*幅*/
+}
+/*１カラム時*/
+.c1 #main {
+	float: none;
+	width: auto;
+}
+/*h2タグの設定*/
+#main h2 {
+	clear: both;
+	margin-bottom: 20px;	/*見出しの下にとるスペース*/
+	font-size: 18px;		/*文字サイズ*/
+	letter-spacing: 0.1em;	/*文字間隔*/
+	padding: 10px 20px;		/*上下、左右への余白*/
+	background: #FFF;		/*背景色（古いブラウザ用）*/
+	background: linear-gradient(#FFF, #f0f0f0);	/*グラデーション*/
+	border: 1px solid #dadada;
+	border-bottom: 5px solid #c50000;	/*下の線の幅・線種・色*/
+}
+/*mainコンテンツのh3タグの設定*/
+#main h3 {
+	clear: both;
+	margin-bottom: 20px;		/*見出しの下にとるスペース*/
+	padding: 4px 20px;			/*上下、左右への余白*/
+	border: 1px solid #dadada;	/*枠線の幅・線種・色*/
+	background: #fff;			/*背景色（古いブラウザ用）*/
+	background: linear-gradient(#FFF, #f7f7f7);	/*グラデーション*/
+}
+/*mainコンテンツのh4タグの設定*/
+#main h4 {
+	clear: both;
+	margin-bottom: 20px;	/*見出しの下にとるスペース*/
+	border-bottom: 1px solid #dadada;	/*下線の幅、線種、色*/
+	padding-left: 20px;	/*左に空ける余白*/
+}
+/*hタグに画像を使った場合用のスタイル*/
+#main .img {
+	padding: 0 !important;
+	border: 0 !important;
+	background: none !important;
+}
+/*段落タグ設定*/
+#main p {
+	padding: 0px 20px 15px;	/*上、左右、下への余白*/
+}
+/*他。微調整。*/
+#main p + p {
+	margin-top: -5px;
+}
+#main h2 + p,
+#main h3 + p,
+#main h4 + p {
+	margin-top: -10px;
+}
+#main section + section {
+	margin-top: 40px;
 }
 
-.bnr {
-	overflow:hidden;
+/*ボックス（list）設定
+---------------------------------------------------------------------------*/
+/*ボックス１個あたりの設定*/
+#main .list {
+	position: relative;overflow: hidden;
+	background: #fff;		/*背景色*/
+	color: #666;			/*文字色*/
+	margin-bottom: 20px;	/*ボックス同士の上下間の余白*/
+	padding: 20px;			/*ボックス内の余白。ここを変更する場合は、下の「#main .list a」の「margin」と「padding」の数字も変更。*/
+	border: 1px solid #dadada;
+}
+#main .list a {
+	overflow: hidden;display: block;text-decoration: none;
+	margin: -20px;	/*ボックス内の余白。ここを変更する場合は、上の「#main .list」の「padding」の数字も変更。※マイナスを必ずつけて下さい。*/
+	padding: 20px;	/*ボックス内の余白。ここを変更する場合は、上の「#main .list」の「padding」の数字も変更。*/
+	color: #666;	/*文字色*/
+}
+/*ボックスにリンク指定がされた場合に出る「→」マーク*/
+#main .list a::before {
+	position: absolute;text-align: center;
+	content: "→";	/*この文字を出す。他の文字に変えても可だが機種依存文字は化けるので使わない。*/
+	right: 20px;		/*ボックスの右から20pxの場所に配置*/
+	bottom: 20px;		/*ボックスの下から20pxの場所に配置*/
+	background: #ccc;	/*背景色*/
+	color: #fff;		/*文字色*/
+	border: 1px solid #fff;	/*枠線の幅、線種、色*/
+	width: 30px;		/*幅*/
+	line-height: 30px;	/*高さ*/
+}
+/*マウスオン時の「→」マークの背景色*/
+#main .list a:hover::before {
+	background: #c50000;
+}
+/*ボックス内の画像設定*/
+#main .list figure {
+	width: 30%;			/*画像の幅*/
+	float: left;		/*左に回り込み*/
+	margin-right: 20px;	/*画像の右側に空けるスペース*/
+}
+/*ボックス内のh4（見出し）タグ設定*/
+#main .list h4 {
+	clear: both;
+	padding: 0;border-bottom: none;
+	font-size: 24px;	/*文字サイズ*/
+	color: #333;		/*文字色*/
+	border-bottom: 1px solid #ccc;	/*下線の幅、線種、色*/
+	margin-bottom: 10px;
+}
+/*ボックス内のh4（見出し）タグの１文字目への設定。左のアクセントラインです。*/
+#main .list h4::first-letter {
+	border-left: 3px solid #c50000;	/*左の線の幅、線種、色*/
+	padding-left: 10px;	/*枠線と文字との間の余白*/
+}
+/*ボックス内のp（段落）タグ設定*/
+#main .list p {
+	padding: 0;
 }
 
-.bnr ul {
-	overflow:hidden;
+/*list内のアイコン（シニア向け、ご家族向け、カップル向け）
+---------------------------------------------------------------------------*/
+/*アイコン全体を囲むボックス*/
+ul.mark {
+	margin-top: -20px;	/*ボックスの上にくっつける為の指定*/
+	float: right;		/*ボックスを右側に配置する*/
+}
+/*アイコン１個あたりの設定*/
+ul.mark li {
+	line-height: 1;
+	float: left;		/*左に回り込み*/
+	background: #999;	/*デフォルトの背景色。グレー色。*/
+	color: #fff;		/*文字色*/
+	font-size: 12px;	/*文字サイズ*/
+	padding: 5px 10px;	/*上下、左右へのアイコン内の余白*/
+	margin-right: 5px;	/*アイコンの左右間に空けるスペース*/
+	margin-bottom: 5px;	/*アイコンの上下間に空けるスペース*/
+}
+/*mark1（シニア向け）への追加設定*/
+ul.mark .mark1 {
+	background: #604781;	/*背景色*/
+}
+/*mark2（ご家族向け）への追加設定*/
+ul.mark .mark2 {
+	background: #668d22;	/*背景色*/
+}
+/*mark3（カップル向け）への追加設定*/
+ul.mark .mark3 {
+	background: #c8436f;	/*背景色*/
+}
+/*mark4（キャンペーン向け）への追加設定*/
+ul.mark .mark4 {
+	background: #e38000;	/*背景色*/
 }
 
-.bnr li {
-	margin:0 0 10px 0;
-	padding:0;
-	list-style:none;
+/*subコンテンツ
+---------------------------------------------------------------------------*/
+/*subブロック*/
+#sub {
+	float: left;	/*左に回り込み*/
+	width: 24%;		/*幅*/
 }
-.bnr li a:hover {
-	opacity:0.8;
-	filter:alpha(opacity=80);
-	-ms-filter:"alpha( opacity=80 )";
+/*１カラム時*/
+.c1 #sub {
+	display: none;	/*非表示にする設定*/
 }
-.bnr img {
-	width:100%;
+/*subコンテンツ内のh2タグ設定*/
+#sub h2 {
+	background: #fff;		/*背景色*/
+	border: 1px solid #dadada;	/*枠線の幅、線種、色*/
+	text-align: center;			/*文字をセンタリング*/
+	padding: 10px 5px;			/*上下、左右へのボックス内の余白*/
 }
 
-/*================================================
- *  フッター
- ================================================*/
+/*サブコンテンツ内のメニュー
+---------------------------------------------------------------------------*/
+/*メニュー全体の設定*/
+#sub ul.submenu {
+	margin-bottom: 20px;	/*メニューブロックの下に空けるスペース*/
+}
+#sub ul.submenu li a {
+	text-decoration: none;display: block;
+	padding: 2px 10px;		/*上下、左右へのメニュー間の余白*/
+	text-align: center;		/*文字をセンタリング*/
+	border-bottom: 1px solid #dadada;	/*下側の線の幅、線種、色*/
+}
+/*マウスオン時*/
+#sub ul.submenu li a:hover {
+	background: #fff;
+}
+
+/*サブコンテンツ内のbox
+---------------------------------------------------------------------------*/
+#sub .box {
+	padding: 15px;			/*ボックス内の余白*/
+	margin-bottom: 20px;	/*ボックスの下に空けるスペース*/
+	border: 4px double #dadada;	/*枠線の幅、線種、色*/
+	background: #f7f7f7;		/*背景色*/
+}
+/*box1内のメニューの追加設定*/
+#sub .box ul.submenu {
+	margin-bottom: 0px;
+}
+
+/*ご予約状況ボックス
+---------------------------------------------------------------------------*/
+.man span {
+	color: #BE8406;	/*「■」の色*/
+}
+
+/*フッター設定
+---------------------------------------------------------------------------*/
 footer {
-	clear:both;
+	clear: both;
+	font-size: 85%;		/*文字サイズ*/
+	background: #000;	/*背景色*/
+	color: #fff;		/*文字色*/
+	text-align: center;	/*文字をセンタリング*/
+}
+footer a {text-decoration: none;color: #fff;}
+footer .pr {display: block;font-size: 80%;}
+
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体の設定*/
+#new dl {
+	padding: 0 20px;	/*上下、左右へのボックス内の余白*/
+}
+/*日付設定*/
+#new dt {
+	float: left;	/*左に回り込み*/
+	width: 9em;		/*幅*/
+	letter-spacing: 0.1em;	/*文字間隔*/
+}
+/*記事設定*/
+#new dd {
+	padding-left: 9em;	/*左に空けるスペース。日付の幅の分をここで確保。*/
+	border-bottom: 1px solid rgba(255,255,255,0.3);	/*下線の幅、線種、色*/
 }
 
-.footmenu {
-	width:100%;
-	padding:20px 0;
-	overflow:hidden;
-	border-top:1px dotted #ccc;
-	border-bottom:1px dotted #ccc;
+/*Informationページのページ内メニュー
+---------------------------------------------------------------------------*/
+/*メニューボックス全体の設定*/
+#pagenav {
+	overflow: hidden;
+	margin-bottom: 20px;
+	color: #fff;		/*文字色*/
+	text-align: center;	/*内容をセンタリング*/
+	padding: 10px;		/*ボックス内余白*/
+	background: #333;	/*背景色（古いブラウザ用）*/
+	background: rgba(0,0,0,0.5);	/*背景色。0,0,0は黒の事で0.5は50%色がついた状態の事。*/
 }
-.footmenu ul {
-	position:relative;
-	float:left;
-	left:50%;
-	margin:0;
+#pagenav a {
+	color: #fff;	/*リンクテキストの文字色*/
 }
-.footmenu li {
-	position:relative;
-	left:-50%;
-	float:left;
-	list-style:none;
-	margin:0;
-	padding:0 20px;
-	font-size:12px;
-	text-align:center;
+/*メニュー１個あたりの設定*/
+#pagenav li {
+	display: inline-block;	/*横並びにさせる設定*/
+	margin: 5px;			/*メニュー同士に空けるスペース*/
 }
 
-.copyright {
-	clear:both;
-	padding:20px 0;
-	font-size:11px;
-	text-align:center;
+/*テーブル（ta1）
+---------------------------------------------------------------------------*/
+/*テーブル１行目に入った見出し部分（※caption）*/
+.ta1 caption {
+	border: 1px solid #ccc;	/*テーブルの枠線の幅、線種、色*/
+	border-bottom: none;	/*下線だけ消す*/
+	text-align: left;		/*文字を左寄せ*/
+	font-weight: bold;		/*太字に*/
+	padding: 10px;			/*ボックス内の余白*/
+	background: #eee;		/*背景色*/
+}
+/*ta1設定*/
+.ta1 {
+	table-layout: fixed;
+	width: 100%;
+	margin: 0 auto 20px;
+}
+.ta1, .ta1 td, .ta1 th {
+	word-break: break-all;
+	border: 1px solid #ccc;	/*テーブルの枠線の幅、線種、色*/
+	padding: 10px 15px;	/*ボックス内の余白*/
+}
+/*テーブル１行目に入った見出し部分*/
+.ta1 th.tamidashi {
+	width: auto;
+	text-align: left;	/*左よせ*/
+	background: #eee;	/*背景色*/
+}
+/*ta1の左側ボックス*/
+.ta1 th {
+	width: 140px;	/*幅*/
+	text-align: center;	/*センタリング*/
+	font-weight: normal;	/*デフォルトの太字を標準にする設定*/
 }
 
-/*================================================
- *  ページトップへの戻り
- ================================================*/
-.totop {
-	position:fixed;
-	bottom:15px;
-	right:15px;
+/*フォーム関連
+---------------------------------------------------------------------------*/
+/*ボタン（btn）*/
+input[type="submit"].btn,
+input[type="button"].btn,
+input[type="reset"].btn {
+	padding: 5px 20px;		/*上下、左右へのボックス内の余白*/
+	border-radius: 3px;		/*角丸のサイズ*/
+	color: #666;			/*文字色*/
+	background: #fff;		/*背景色（古いブラウザ用）*/
+	background: linear-gradient(#fff, #eee);/*背景グラデーション*/
+	border: 1px solid #ccc;	/*枠線の幅、線種、色*/
 }
-.totop a {
-	display:block;
-	text-decoration:none;
+/*マウスオン時のボタン（btn）設定*/
+input[type="submit"].btn:hover,
+input[type="button"].btn:hover,
+input[type="reset"].btn:hover {
+	background: #fff;	/*背景色*/
+	color: #111;		/*文字色*/
+	border: 1px solid #666;	/*枠線の幅、線種、色*/
 }
-.totop img {
-	background:#7dbdb4;
+/*input,textarea共通*/
+input,textarea {
+	outline: none;
+	border: 1px solid #ccc;	/*枠線の幅、線種、色（古いブラウザ用）*/
 }
-.totop img:hover {
-	background:#85d1c6;
-}
-
-/*================================================
- *  クラス
- ================================================*/
-.textL {
-	text-align:left;
-}
-
-.textR {
-	text-align:right;
-}
-
-.list {
-	padding:0 0 0 2em;
+/*input,textareaのフォーカス時*/
+input:focus,textarea:focus {
+	border: 1px solid #666;	/*枠線の幅、線種、色*/
 }
 
-.list li {
-	margin:0;
-	padding:0;
-	list-style:none;
-	text-indent:-1.3em;
+/*ページの上部に戻る「↑」ボタン
+---------------------------------------------------------------------------*/
+@keyframes scroll {
+0% {opacity: 0;}
+100% {opacity: 1;}
 }
-.list li:before {
-	content:"\002618\00a0";
-	color:#9b2f3d;
+/*通常時のボタンは非表示*/
+body .nav-fix-pos-pagetop a {
+	display: none;
 }
-
-.temp {
-	clear:both;
-	overflow:hidden;
-	margin-bottom:50px;
+/*fixmenu_pagetop.jsで設定している設定値になったら出現するボタンスタイル*/
+body.is-fixed-pagetop .nav-fix-pos-pagetop a {
+	display: block;text-decoration: none;text-align: center;z-index: 100;position: fixed;animation-name: scroll;animation-duration: 1s;animation-fill-mode: forwards;
+	width: 50px;		/*ボタンの幅*/
+	line-height: 50px;	/*ボタンの高さ*/
+	bottom: 50px;		/*ウィンドウの下から20pxの場所に配置*/
+	right: 1%;			/*ウィンドウの右から1%の場所に配置*/
+	color: #fff;		/*文字色*/
+	border-radius: 50%;	/*角丸指定。50%にすると円形になる。四角形がいいならこの１行削除。*/
+	background: #c50000;	/*背景色*/
 }
-
-.img {
-	float:left;
-	width:300px;
-}
-
-.text {
-	float:right;
-	width:450px;
-}
-
-.photo {
-	margin:20px 0;
-	padding:10px;
-	box-shadow:rgba(113, 135, 164, 0.8) 0 3px 15px 0;
-	background:#fff;
+/*マウスオン時の背景色*/
+body.is-fixed-pagetop .nav-fix-pos-pagetop a:hover {
+	background: #ccc;
 }
 
-.info dt {
-	border-bottom:none;
+/*checkブロック。赤い注意書きブロックです。
+---------------------------------------------------------------------------*/
+p.check {
+	background: #ff0000;
+	color:#fff;
+	padding: 10px 25px !important;
+	margin-bottom: 20px;
 }
-.info dd {
-	padding-bottom:1em;
-	border-bottom:1px solid #ddd;
+p.check a {color: #fff;}
+
+/*トップページのNEWアイコン
+---------------------------------------------------------------------------*/
+.newicon {
+	background: #F00;	/*背景色*/
+	color: #FFF;		/*文字色*/
+	font-size: 70%;		/*文字サイズ*/
+	line-height: 1.5;
+	padding: 2px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+	vertical-align: text-top;
 }
 
-.catalog {
-	overflow:hidden;
+/*その他
+---------------------------------------------------------------------------*/
+.look {background: #ccc;color: #333;padding: 5px 10px;border-radius: 4px;}
+.mb15,.mb1em {margin-bottom: 15px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.clear {clear: both;}
+ul.disc {padding: 0em 25px 15px;list-style: disc;}
+.color1, .color1 a {color: #c50000;}
+.pr {font-size: 10px;}
+.wl {width: 96%;}
+.ws {width: 50%;}
+.c {text-align: center;}
+.r {text-align: right;}
+.l {text-align: left;}
+img.fr {float: right;margin-left: 10px;margin-bottom: 10px;width: 30%;}
+img.fl {float: left;margin-right: 10px;margin-bottom: 10px;width: 30%;}
+.big1 {font-size: 24px;}
+.mini1 {font-size: 11px;display: inline-block;line-height: 1.5;}
+.sh {display: none;}
+
+
+
+
+/*画面幅800px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:800px){
+
+/*ヘッダー（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+/*ヘッダーブロック*/
+header {
+	height: auto;
+	padding: 20px 0;
 }
-.catalog ul {
-	overflow:hidden;
-	margin-top:1.587%;
-	margin-right:-1.587%;
+/*ロゴ画像*/
+header #logo img {
+	float: none;
+	margin-top: 10px;
 }
-.catalog li {
-	list-style:none;
-	float:left;
-	width:18.412%;
-	margin:0 1.587% 1.587% 0;
-}
-.catalog li img {
-	width:100%;
+/*電話番号ボックス*/
+header #tel {
+	float: none;
 }
 
-/*================================================
- *  スライドショー
- ================================================*/
-.slide {
-	width:100%;
-	overflow:hidden;
-	position:relative;
-	margin-bottom:20px;
+/*メインメニュー
+---------------------------------------------------------------------------*/
+/*アニメーションのフレーム設定。全100コマアニメーションだと思って下さい。透明度(opacity)0%から透明度100%にする指定。*/
+@keyframes menu1 {
+0% {opacity: 0;}
+100% {opacity: 1;}
+}
+/*スマホ用メニューブロック*/
+#menubar-s {
+	display: block;overflow: hidden;
+	position: absolute;z-index: 10;
+	width: 100%;margin-left: -3%;
+	top: 120px;					/*上から120pxの場所に配置*/
+	border-top: 1px solid #fff;	/*上の線の幅、線種、色*/
+	animation-name: menu1;		/*上のkeyframesの名前*/
+	animation-duration: 0.5S;	/*アニメーションの実行時間。0.5秒。*/
+	animation-fill-mode: both;	/*アニメーションの完了後、最後のキーフレームを維持する*/
+}
+/*メニュー１個あたりの設定*/
+#menubar-s li a {
+	display: block;text-decoration: none;
+	padding: 15px 10px 15px 20px;	/*上、右、下、左へのメニュー内の余白*/
+	border-bottom: 1px solid #fff;	/*下の線の幅、線種、色*/
+	background: rgba(0,0,0,0.8);	/*背景色*/
+	color: #fff;		/*文字色*/
+	font-size: 20px;	/*文字サイズ*/
+}
+/*英語表記（飾り文字）*/
+#menubar-s li a span {
+	display: block;
+	font-size: 12px;	/*文字サイズ*/
+}
+/*現在表示中メニューの設定*/
+#menubar-s li.current a {
+	color: #fee32e;
+}
+/*PC用メニューを非表示にする*/
+#menubar {
+	display: none;
 }
 
-.slideInner {
-	list-style:none;
-	margin:0 0 5px 0;
-	padding:0;
+/*３本バーアイコン設定
+---------------------------------------------------------------------------*/
+/*３本バーブロック*/
+#menubar_hdr {
+	display: block;
+	position: absolute;
+	top: 30px;	/*上から30pxの場所に配置*/
+	right: 3%;	/*右から3%の場所に配置*/
+	border: 1px solid #c50000;	/*枠線の幅、線種、色*/
 }
-.slideInner li {
-	position:absolute;
-	width:100%;
-	background:#fff;
-	margin:0;
-	padding:0;
+/*アイコン共通設定*/
+#menubar_hdr.close,
+#menubar_hdr.open {
+	width: 50px;	/*幅*/
+	height: 50px;	/*高さ*/
 }
-.slideInner li img {
-	width:100%;
-	height:auto;
+/*三本バーアイコン*/
+#menubar_hdr.close {
+	background: url(../images/icon_menu.png) no-repeat center top/50px;
 }
-
-.slidePrev {
-	position:absolute;
-	width:50px;
-	height:60px;
-	left:0;
-	cursor:pointer;
-	z-index:100;
-}
-
-.slideNext {
-	position:absolute;
-	display:block;
-	width:50px;
-	height:60px;
-	right:0;
-	cursor:pointer;
-	z-index:100;
+/*閉じるアイコン*/
+#menubar_hdr.open {
+	background: url(../images/icon_menu.png) no-repeat center bottom/50px;
 }
 
-.controlNav {
-	  position:relative;
-	  float:left;
-	  left:50%;
-}
-.controlNav span {
-	position:relative;
-	left:-50%;
-	float:left;
-	margin:5px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
-	width:10px;
-	height:10px;
-	overflow:hidden;
-	-webkit-box-shadow:1px 1px 2px rgba(0, 0, 0, 0.5) inset;
-	-moz-box-shadow:1px 1px 2px rgba(0, 0, 0, 0.5) inset;
-	box-shadow:1px 1px 2px rgba(0, 0, 0, 0.5) inset;
-	background:#eee;
-	text-indent:-9999px;
-	vertical-align:middle;
-}
-.controlNav span:hover {
-	background:#ccc;
-	cursor:pointer;
-}
-.controlNav span.current {
-	-webkit-box-shadow:1px 1px 2px rgba(0, 0, 0, 0.5) inset, 0 0 2px rgba(133, 209, 198, 0.5);
-	-moz-box-shadow:1px 1px 2px rgba(0, 0, 0, 0.5) inset, 0 0 2px rgba(133, 209, 198, 0.5);
-	box-shadow:1px 1px 2px rgba(0, 0, 0, 0.5) inset, 0 0 2px rgba(133, 209, 198, 0.5);
-	background:#85d1c6;
+/*main,subコンテンツ
+---------------------------------------------------------------------------*/
+#main, #sub {
+	float: none;
+	width: auto;
+	overflow: hidden;
 }
 
-/*================================================
- *  タブレット向けデザイン
- ================================================*/
-/* スクロールバーを考慮して20px大きいサイズで切り替え */
-@media screen and (max-width:979px) {
-	body {
-		box-sizing: border-box;
-		width:100%;
-		padding:0 10px;
-	}
+/*その他
+---------------------------------------------------------------------------*/
+body.s-n #sub,body.s-n #footermenu,.m-n {display: none;}
 
-	header h1 {
-		margin-bottom:0;
-	}
-
-	.tel {
-		position:relative;
-		text-align:right;
-	}
-
-	.catalog li {
-		width:23.412%;
-	}
 }
 
-/*================================================
- *  スマートフォン向けデザイン
- ================================================*/
-@media screen and (max-width:767px) {
-	#main {
-		float:none;
-		width:100%;
-	}
 
-	#sub {
-		float:none;
-		width:100%;
-	}
 
-	.bnr ul {
-		overflow:hidden;
-		margin-right:-2%;
-	}
+/*画面幅480px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:480px){
 
-	.bnr li {
-		float:left;
-		width:48%;
-		margin:0 2% 2% 0;
-	}
+/*全体の設定
+---------------------------------------------------------------------------*/
+body {
+	font-size: 12px;	/*文字サイズ*/
+	line-height: 1.5;	/*行間*/
+}
 
-	/* 下層サブメニュー */
-	#subnav {
-		display:block;
-		position:relative;
-		margin-bottom:10px;
-	}
-	#subnav h3 {
-		cursor:pointer;
-		background:#85d1c6;
-	}
-	#subnav h3:after {
-		position:absolute;
-		content:"\0025bc";
-		top:3px;
-		right:5px;
-	}
-	#subnav h3.menuOpen:after {
-		position:absolute;
-		content:"\0025b2";
-		top:3px;
-		right:5px;
-	}
-	#subnav li {
-		margin:0;
-		padding:0;
-		list-style:none;
-	}
-	#subnav li a:before {
-		content:"\0025a0";
-		color:#5b4111;
-	}
-	#subnav li a {
-		display:block;
-		padding:5px 2px;
-		border-bottom:1px dotted #ddd;
-		text-decoration:none;
-	}
-	#subnav li a:hover {
-		background:#f7d0cb;
-	}
+/*ヘッダー（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+/*ロゴ画像*/
+header #logo img {
+	width: 220px;		/*画像の幅*/
+	margin-top: 12px;
+}
+
+/*メインメニュー
+---------------------------------------------------------------------------*/
+/*スマホ用メニューブロック*/
+#menubar-s {
+	top: 95px;	/*上から95pxの場所に配置*/
+}
+
+/*３本バーアイコン設定
+---------------------------------------------------------------------------*/
+/*３本バーブロック*/
+#menubar_hdr {
+	top: 20px;	/*上から20pxの場所に配置*/
+}
+
+/*mainコンテンツ
+---------------------------------------------------------------------------*/
+#main h2, #main h3, #main h4 {
+	font-size: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/*段落タグ設定*/
+#main p {
+	padding: 0px 10px 20px;	/*上、左右、下への余白*/
+}
+
+/*ボックス（list）設定
+---------------------------------------------------------------------------*/
+/*ボックス１個あたりの設定*/
+#main .list {
+	padding: 10px;	/*ボックス内の余白。ここを変更する場合は、下の「#main .list a」の「margin」と「padding」の数字も変更。*/
+}
+#main .list a {
+	margin: -10px;	/*ボックス内の余白。ここを変更する場合は、上の「#main .list」の「padding」の数字も変更。※マイナスを必ずつけて下さい。*/
+	padding: 10px;	/*ボックス内の余白。ここを変更する場合は、上の「#main .list」の「padding」の数字も変更。*/
+}
+/*ボックス内のh4（見出し）タグ設定*/
+#main .list h4 {
+	font-size: 16px;
+}
+/*ボックスにリンク指定がされた場合に出る「→」マーク*/
+#main .list a::before {
+	right: 10px;		/*ボックスの右から10pxの場所に配置*/
+	bottom: 10px;		/*ボックスの下から10pxの場所に配置*/
+	width: 20px;		/*幅*/
+	line-height: 20px;	/*高さ*/
+}
+
+/*list内のアイコン（シニア向け、ご家族向け、カップル向け）
+---------------------------------------------------------------------------*/
+/*アイコン全体を囲むボックス*/
+ul.mark {
+	margin-top: -10px;	/*ボックスの上にくっつける為の指定*/
+}
+/*アイコン１個あたりの設定*/
+ul.mark li {
+	font-size: 10px;	/*文字サイズ*/
+	padding: 2px 5px;	/*上下、左右へのアイコン内の余白*/
+}
+
+/*サブコンテンツ内のメニュー
+---------------------------------------------------------------------------*/
+/*メニュー１個ごとの設定*/
+#sub ul.submenu li a {
+	padding: 10px;		/*メニュー間の余白*/
+}
+
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体の設定*/
+#new dl {
+	padding: 0 10px;	/*上下、左右へのボックス内の余白*/
+}
+
+/*テーブル（ta1）
+---------------------------------------------------------------------------*/
+/*テーブル１行目に入った見出し部分（※caption）*/
+.ta1 caption {
+	padding: 5px;	/*ボックス内の余白*/
+}
+/*ta1設定*/
+.ta1, .ta1 td, .ta1 th {
+	padding: 5px;	/*ボックス内の余白*/
+}
+/*ta1の左側ボックス*/
+.ta1 th {
+	width: 100px;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.ws,.wl {width: 94%;}
+.big1 {font-size: 16px;}
+img.fr,img.fl {float: none;margin: 0;width: 100%;}
+.sh {display:block;}
+.pc {display:none;}
+
 }
