@@ -137,6 +137,7 @@ header #tel {
 #main {
 	float: left;	/*右に回り込み*/
 	width: 100%;		/*幅*/
+	margin-left: 20px
 }
 /*１カラム時*/
 .c1 #main {
@@ -203,6 +204,7 @@ header #tel {
 	background: #fff;		/*背景色*/
 	color: #666;			/*文字色*/
 	margin-bottom: 20px;	/*ボックス同士の上下間の余白*/
+	padding-left: 20px;	/*左に空ける余白*/
 	padding: 20px;			/*ボックス内の余白。ここを変更する場合は、下の「#main .list a」の「margin」と「padding」の数字も変更。*/
 	border: 1px solid #dadada;
 }
