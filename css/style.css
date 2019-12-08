@@ -58,7 +58,7 @@ header {
 }
 /*ロゴ画像*/
 header #logo img {
-	width: 400px;		/*画像の幅*/
+	width: 200px;		/*画像の幅*/
 	float: left;		/*左に回り込み*/
 	margin-top: 40px;	/*上に空けるスペース。上下間のバランスをここでとって下さい。*/
 }
