@@ -135,8 +135,8 @@ header #tel {
 /*mainコンテンツ
 ---------------------------------------------------------------------------*/
 #main {
-	float: center;	/*右に回り込み*/
-	width: 80%;		/*幅*/
+	float: left;	/*右に回り込み*/
+	width: 100%;		/*幅*/
 }
 /*１カラム時*/
 .c1 #main {
@@ -192,6 +192,7 @@ header #tel {
 }
 #main section + section {
 	margin-top: 40px;
+	margin-left: 40px;
 }
 
 /*ボックス（list）設定
