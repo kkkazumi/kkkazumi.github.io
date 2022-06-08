@@ -1,1 +1,0 @@
-# kaz-mintan.github.io
