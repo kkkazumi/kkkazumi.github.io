@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # またはデプロイ対象のブランチ名
 
 permissions:
   contents: read
@@ -14,17 +14,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout source
         uses: actions/checkout@v4
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+      - name: Upload site artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./public
-          name: github-pages-site
+          path: ./public  # HTMLファイルがあるディレクトリ
+          name: github-pages-site  # ← 重複しない一意な名前に変更
 
   deploy:
     needs: build
@@ -33,4 +33,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: github-pages-site
+          artifact_name: github-pages-site  # ← 上と一致させる
